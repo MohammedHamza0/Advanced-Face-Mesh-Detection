@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Engineer Roadmap - Professional Path to Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        header p {
+            font-size: 1.3em;
+            font-weight: 300;
+            opacity: 0.95;
+        }
+
+        .nav-tabs {
+            display: flex;
+            background: #f8f9fa;
+            border-bottom: 2px solid #e0e0e0;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 20px 30px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            font-size: 1em;
+            font-weight: 600;
+            color: #666;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            position: relative;
+        }
+
+        .nav-tab:hover {
+            background: #e9ecef;
+            color: #667eea;
+        }
+
+        .nav-tab.active {
+            color: #667eea;
+            background: white;
+        }
+
+        .nav-tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #667eea;
+        }
+
+        .content {
+            padding: 40px;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .phase {
+            margin-bottom: 40px;
+            border-left: 4px solid #667eea;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .phase::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px white, 0 0 0 6px #667eea;
+        }
+
+        .phase-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .phase-number {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3em;
+            margin-right: 20px;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .phase-title {
+            flex: 1;
+        }
+
+        .phase-title h2 {
+            font-size: 1.8em;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .phase-duration {
+            color: #666;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+
+        .skill-category {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .skill-category h3 {
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-category h3::before {
+            content: '▸';
+            margin-right: 10px;
+            color: #667eea;
+        }
+
+        .skill-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-list li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #555;
+        }
+
+        .skill-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .resource-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .resource-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.2);
+            transform: translateY(-3px);
+        }
+
+        .resource-card h4 {
+            color: #667eea;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .resource-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resource-card li {
+            padding: 8px 0;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .resource-card li::before {
+            content: '→';
+            margin-right: 8px;
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        .timeline {
+            background: linear-gradient(to bottom, #f8f9fa 0%, white 100%);
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .timeline-marker {
+            min-width: 120px;
+            font-weight: 700;
+            color: #667eea;
+            font-size: 1.1em;
+        }
+
+        .timeline-content {
+            flex: 1;
+            padding-left: 30px;
+            border-left: 3px solid #e0e0e0;
+        }
+
+        .timeline-content h4 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            border-left: 5px solid #f39c12;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            color: #d35400;
+            margin-bottom: 10px;
+        }
+
+        .project-card {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid #10b981;
+        }
+
+        .project-card h4 {
+            color: #2d6a4f;
+            margin-bottom: 12px;
+            font-size: 1.2em;
+        }
+
+        .project-card p {
+            color: #40916c;
+            margin-bottom: 10px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .tech-badge {
+            background: white;
+            color: #2d6a4f;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .progress-tracker {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .progress-tracker h3 {
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        .progress-item {
+            margin-bottom: 20px;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .progress-bar {
+            height: 10px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            transition: width 1s ease;
+        }
+
+        .key-principle {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-left: 5px solid #3b82f6;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .key-principle h4 {
+            color: #1e40af;
+            margin-bottom: 8px;
+        }
+
+        .key-principle p {
+            color: #1e3a8a;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .phase-number {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1em;
+            }
+
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-tab {
+                padding: 15px 20px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 LLM Engineer Roadmap</h1>
+            <p>Your Professional Path to Becoming a Top-Tier LLM Engineer with Elite Software Engineering Skills</p>
+        </header>
+
+        <div class="nav-tabs">
+            <button class="nav-tab active" onclick="showTab('overview')">Overview</button>
+            <button class="nav-tab" onclick="showTab('foundations')">Foundations</button>
+            <button class="nav-tab" onclick="showTab('intermediate')">Intermediate</button>
+            <button class="nav-tab" onclick="showTab('advanced')">Advanced</button>
+            <button class="nav-tab" onclick="showTab('expert')">Expert Level</button>
+            <button class="nav-tab" onclick="showTab('projects')">Projects</button>
+            <button class="nav-tab" onclick="showTab('resources')">Resources</button>
+        </div>
+
+        <div class="content">
+            <!-- OVERVIEW TAB -->
+            <div id="overview" class="tab-content active">
+                <h2 style="color: #667eea; margin-bottom: 30px;">The Complete Journey: 18-24 Months to Excellence</h2>
+                
+                <div class="highlight-box">
+                    <h3>🎯 What Makes a Top-Tier LLM Engineer?</h3>
+                    <p><strong>Technical Mastery:</strong> Deep understanding of transformer architectures, training pipelines, and optimization techniques</p>
+                    <p><strong>Software Engineering Excellence:</strong> Production-grade code, system design, scalability, and best practices</p>
+                    <p><strong>Research Mindset:</strong> Ability to read papers, implement novel techniques, and contribute to the field</p>
+                    <p><strong>Business Acumen:</strong> Understanding of real-world applications, cost optimization, and deployment strategies</p>
+                </div>
+
+                <div class="timeline">
+                    <h3 style="color: #667eea; margin-bottom: 25px;">Your Learning Timeline</h3>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker">Months 0-6</div>
+                        <div class="timeline-content">
+                            <h4>Foundation Phase</h4>
+                            <p>Master Python, ML fundamentals, deep learning basics, and software engineering principles. Build your first neural networks and understand the mathematics behind them.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">Months 6-12</div>
+                        <div class="timeline-content">
+                            <h4>Intermediate Phase</h4>
+                            <p>Deep dive into transformers, NLP, and LLM architectures. Learn fine-tuning, prompt engineering, and RAG systems. Build production-ready applications.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">Months 12-18</div>
+                        <div class="timeline-content">
+                            <h4>Advanced Phase</h4>
+                            <p>Master LLM training from scratch, distributed systems, optimization techniques, and advanced architectures. Contribute to open-source projects.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-marker">Months 18-24</div>
+                        <div class="timeline-content">
+                            <h4>Expert Phase</h4>
+                            <p>Research-level understanding, novel contributions, system architecture at scale, and thought leadership. Publish papers and build innovative solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-principle">
+                    <h4>🔑 Key Success Principle</h4>
+                    <p>The difference between good and great LLM engineers is not just knowing the theory—it's the ability to implement, optimize, and deploy solutions at scale with clean, maintainable code. Focus equally on ML/AI skills and software engineering fundamentals.</p>
+                </div>
+            </div>
+
+            <!-- FOUNDATIONS TAB -->
+            <div id="foundations" class="tab-content">
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-number">1</div>
+                        <div class="phase-title">
+                            <h2>Foundation Phase (Months 0-6)</h2>
+                            <div class="phase-duration">⏱ 6 months | 20-25 hours/week</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Programming & Software Engineering</h3>
+                        <ul class="skill-list">
+                            <li><strong>Python Mastery:</strong> Advanced Python (OOP, decorators, generators, async/await, type hints)</li>
+                            <li><strong>Data Structures & Algorithms:</strong> Arrays, trees, graphs, dynamic programming, complexity analysis</li>
+                            <li><strong>Software Design Patterns:</strong> Factory, Singleton, Observer, Strategy, Dependency Injection</li>
+                            <li><strong>Version Control:</strong> Git workflows, branching strategies, code review practices</li>
+                            <li><strong>Testing:</strong> Unit tests (pytest), integration tests, TDD methodology</li>
+                            <li><strong>Clean Code:</strong> SOLID principles, refactoring, code smells, documentation</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Mathematics for ML</h3>
+                        <ul class="skill-list">
+                            <li><strong>Linear Algebra:</strong> Matrices, vectors, eigenvalues, SVD, matrix decomposition</li>
+                            <li><strong>Calculus:</strong> Derivatives, gradients, chain rule, partial derivatives, optimization</li>
+                            <li><strong>Probability & Statistics:</strong> Distributions, Bayes theorem, MLE, hypothesis testing</li>
+                            <li><strong>Information Theory:</strong> Entropy, KL divergence, cross-entropy</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Machine Learning Fundamentals</h3>
+                        <ul class="skill-list">
+                            <li><strong>Supervised Learning:</strong> Linear/logistic regression, decision trees, SVMs, ensemble methods</li>
+                            <li><strong>Unsupervised Learning:</strong> Clustering, dimensionality reduction (PCA, t-SNE)</li>
+                            <li><strong>Model Evaluation:</strong> Cross-validation, metrics (precision, recall, F1, AUC-ROC)</li>
+                            <li><strong>Feature Engineering:</strong> Normalization, encoding, feature selection</li>
+                            <li><strong>Libraries:</strong> NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Deep Learning Basics</h3>
+                        <ul class="skill-list">
+                            <li><strong>Neural Networks:</strong> Perceptrons, activation functions, backpropagation</li>
+                            <li><strong>Frameworks:</strong> PyTorch fundamentals (tensors, autograd, nn.Module)</li>
+                            <li><strong>Training:</strong> Loss functions, optimizers (SGD, Adam), learning rate scheduling</li>
+                            <li><strong>Regularization:</strong> Dropout, batch normalization, weight decay</li>
+                            <li><strong>CNNs:</strong> Convolutions, pooling, ResNet, transfer learning</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>📚 Essential Resources - Foundation</h3>
+                        <p><strong>Books:</strong> "Python for Data Analysis" (McKinney), "Hands-On Machine Learning" (Géron), "Deep Learning" (Goodfellow)</p>
+                        <p><strong>Courses:</strong> Fast.ai Practical Deep Learning, Stanford CS229, Andrew Ng's ML Specialization</p>
+                        <p><strong>Practice:</strong> LeetCode (150+ problems), Kaggle competitions (beginner tier)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INTERMEDIATE TAB -->
+            <div id="intermediate" class="tab-content">
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-number">2</div>
+                        <div class="phase-title">
+                            <h2>Intermediate Phase (Months 6-12)</h2>
+                            <div class="phase-duration">⏱ 6 months | 25-30 hours/week</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Advanced Software Engineering</h3>
+                        <ul class="skill-list">
+                            <li><strong>System Design:</strong> Scalability, load balancing, caching, microservices architecture</li>
+                            <li><strong>APIs:</strong> RESTful design, GraphQL, FastAPI, authentication/authorization</li>
+                            <li><strong>Databases:</strong> SQL (PostgreSQL), NoSQL (MongoDB), vector databases (Pinecone, Weaviate)</li>
+                            <li><strong>Containerization:</strong> Docker, Docker Compose, container orchestration basics</li>
+                            <li><strong>CI/CD:</strong> GitHub Actions, automated testing, deployment pipelines</li>
+                            <li><strong>Monitoring:</strong> Logging, metrics, tracing, observability (Prometheus, Grafana)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>NLP & Transformers</h3>
+                        <ul class="skill-list">
+                            <li><strong>NLP Fundamentals:</strong> Tokenization, embeddings (Word2Vec, GloVe), sequence models</li>
+                            <li><strong>RNNs & LSTMs:</strong> Sequence modeling, attention mechanisms</li>
+                            <li><strong>Transformer Architecture:</strong> Self-attention, multi-head attention, positional encoding</li>
+                            <li><strong>BERT & Variants:</strong> Masked language modeling, sentence embeddings, fine-tuning</li>
+                            <li><strong>GPT Architecture:</strong> Autoregressive models, causal attention, decoder-only transformers</li>
+                            <li><strong>Hugging Face:</strong> Transformers library, datasets, tokenizers, model hub</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>LLM Applications</h3>
+                        <ul class="skill-list">
+                            <li><strong>Prompt Engineering:</strong> Zero-shot, few-shot, chain-of-thought, prompt optimization</li>
+                            <li><strong>Fine-tuning:</strong> Full fine-tuning, parameter-efficient methods (LoRA, QLoRA, Adapters)</li>
+                            <li><strong>RAG Systems:</strong> Retrieval mechanisms, embedding models, vector search, chunking strategies</li>
+                            <li><strong>LLM APIs:</strong> OpenAI API, Anthropic Claude, Google PaLM, cost optimization</li>
+                            <li><strong>LangChain/LlamaIndex:</strong> Chains, agents, memory, document loaders</li>
+                            <li><strong>Evaluation:</strong> BLEU, ROUGE, perplexity, human evaluation, A/B testing</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>MLOps Fundamentals</h3>
+                        <ul class="skill-list">
+                            <li><strong>Experiment Tracking:</strong> Weights & Biases, MLflow, experiment management</li>
+                            <li><strong>Model Versioning:</strong> DVC, model registry, artifact management</li>
+                            <li><strong>Deployment:</strong> Model serving (TorchServe, TensorFlow Serving), API endpoints</li>
+                            <li><strong>Monitoring:</strong> Model drift detection, performance monitoring, alerting</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>📚 Essential Resources - Intermediate</h3>
+                        <p><strong>Papers:</strong> "Attention Is All You Need", "BERT", "GPT-2", "GPT-3"</p>
+                        <p><strong>Courses:</strong> Stanford CS224N, Hugging Face Course, DeepLearning.AI LLM Specialization</p>
+                        <p><strong>Books:</strong> "Natural Language Processing with Transformers" (Tunstall et al.)</p>
+                        <p><strong>Practice:</strong> Build 3-5 production LLM applications, contribute to open-source</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADVANCED TAB -->
+            <div id="advanced" class="tab-content">
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-number">3</div>
+                        <div class="phase-title">
+                            <h2>Advanced Phase (Months 12-18)</h2>
+                            <div class="phase-duration">⏱ 6 months | 30-35 hours/week</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>LLM Training & Optimization</h3>
+                        <ul class="skill-list">
+                            <li><strong>Pre-training:</strong> Data preparation, tokenizer training, curriculum learning</li>
+                            <li><strong>Training Techniques:</strong> Mixed precision (FP16, BF16), gradient accumulation, gradient checkpointing</li>
+                            <li><strong>Distributed Training:</strong> Data parallelism, model parallelism, pipeline parallelism</li>
+                            <li><strong>Frameworks:</strong> DeepSpeed, Megatron-LM, FSDP (Fully Sharded Data Parallel)</li>
+                            <li><strong>Optimization:</strong> Flash Attention, memory optimization, kernel fusion</li>
+                            <li><strong>RLHF:</strong> Reward modeling, PPO, DPO (Direct Preference Optimization)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Advanced Architectures</h3>
+                        <ul class="skill-list">
+                            <li><strong>Efficient Transformers:</strong> Sparse attention, linear attention, Reformer, Longformer</li>
+                            <li><strong>Mixture of Experts:</strong> Routing mechanisms, load balancing, Switch Transformers</li>
+                            <li><strong>Multimodal Models:</strong> CLIP, Flamingo, GPT-4V architecture patterns</li>
+                            <li><strong>State Space Models:</strong> Mamba, S4, structured state spaces</li>
+                            <li><strong>Quantization:</strong> Post-training quantization, QAT, GPTQ, AWQ</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Production Systems at Scale</h3>
+                        <ul class="skill-list">
+                            <li><strong>Kubernetes:</strong> Pod management, services, deployments, autoscaling</li>
+                            <li><strong>Model Serving:</strong> vLLM, TGI (Text Generation Inference), Ray Serve</li>
+                            <li><strong>Inference Optimization:</strong> KV cache, continuous batching, speculative decoding</li>
+                            <li><strong>Cost Optimization:</strong> Spot instances, model compression, caching strategies</li>
+                            <li><strong>Security:</strong> Input validation, output filtering, PII detection, adversarial robustness</li>
+                            <li><strong>Cloud Platforms:</strong> AWS SageMaker, GCP Vertex AI, Azure ML</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Research Skills</h3>
+                        <ul class="skill-list">
+                            <li><strong>Paper Reading:</strong> Critical analysis, implementation from papers, reproducibility</li>
+                            <li><strong>Experimentation:</strong> Hypothesis testing, ablation studies, statistical significance</li>
+                            <li><strong>Writing:</strong> Technical documentation, blog posts, research papers</li>
+                            <li><strong>Open Source:</strong> Major contributions, maintaining projects, community engagement</li>
+                        </ul>
+                    </div>
+
+                    <div class="highlight-box">
+                        <h3>📚 Essential Resources - Advanced</h3>
+                        <p><strong>Papers:</strong> "LLaMA", "Chinchilla", "PaLM", "InstructGPT", "Constitutional AI", "Mamba"</p>
+                        <p><strong>Courses:</strong> Stanford CS25 (Transformers United), Berkeley Deep RL</p>
+                        <p><strong>Practice:</strong> Train models from scratch, optimize inference, contribute to major projects</p>
+                        <p><strong>Communities:</strong> EleutherAI, Hugging Face Discord, ML Twitter, research groups</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EXPERT TAB -->
+            <div id="expert" class="tab-content">
+                <div class="phase">
+                    <div class="phase-header">
+                        <div class="phase-number">4</div>
+                        <div class="phase-title">
+                            <h2>Expert Level (Months 18-24+)</h2>
+                            <div class="phase-duration">⏱ 6+ months | 35-40 hours/week</div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Cutting-Edge Research</h3>
+                        <ul class="skill-list">
+                            <li><strong>Novel Architectures:</strong> Design and implement new model architectures</li>
+                            <li><strong>Training Innovations:</strong> New optimization techniques, curriculum strategies</li>
+                            <li><strong>Alignment Research:</strong> Safety, interpretability, controllability</li>
+                            <li><strong>Efficiency:</strong> Novel compression, distillation, and acceleration methods</li>
+                            <li><strong>Publications:</strong> Conference papers (NeurIPS, ICML, ICLR, ACL, EMNLP)</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>System Architecture Mastery</h3>
+                        <ul class="skill-list">
+                            <li><strong>Large-Scale Systems:</strong> Design systems handling millions of requests</li>
+                            <li><strong>Multi-Region Deployment:</strong> Global distribution, latency optimization</li>
+                            <li><strong>Cost at Scale:</strong> Infrastructure optimization, budget management</li>
+                            <li><strong>Team Leadership:</strong> Technical leadership, mentoring, architecture decisions</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Specialized Domains</h3>
+                        <ul class="skill-list">
+                            <li><strong>Code Generation:</strong> CodeLlama, StarCoder, specialized training</li>
+                            <li><strong>Multimodal AI:</strong> Vision-language models, audio processing</li>
+                            <li><strong>Agents & Reasoning:</strong> Tool use, planning, multi-step reasoning</li>
+                            <li><strong>Domain Adaptation:</strong> Medical, legal, scientific LLMs</li>
+                            <li><strong>Multilingual:</strong> Cross-lingual transfer, low-resource languages</li>
+                        </ul>
+                    </div>
+
+                    <div class="skill-category">
+                        <h3>Thought Leadership</h3>
+                        <ul class="skill-list">
+                            <li><strong>Public Speaking:</strong> Conference talks, workshops, tutorials</li>
+                            <li><strong>Content Creation:</strong> Technical blog, YouTube channel, courses</li>
+                            <li><strong>Community Building:</strong> Open-source leadership, mentorship programs</li>
+                            <li><strong>Industry Impact:</strong> Consulting, advisory roles, startup founding</li>
+                        </ul>
+                    </div>
+
+                    <div class="key-principle">
+                        <h4>🏆 Characteristics of Top 1% LLM Engineers</h4>
+                        <p><strong>1. Deep & Broad:</strong> Expert in one area, competent in many</p>
+                        <p><strong>2. Theory + Practice:</strong> Can explain the math AND build production systems</p>
+                        <p><strong>3. Fast Learner:</strong> Quickly adapts to new papers, frameworks, and techniques</p>
+                        <p><strong>4. Systems Thinker:</strong> Understands the full stack from hardware to application</p>
+                        <p><strong>5. Community Contributor:</strong> Gives back through code, writing, and mentorship</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECTS TAB -->
+            <div id="projects" class="tab-content">
+                <h2 style="color: #667eea; margin-bottom: 30px;">Portfolio Projects: Build Your Expertise</h2>
+                
+                <div class="highlight-box">
+                    <h3>🎯 Project Strategy</h3>
+                    <p>Build projects that demonstrate both ML expertise and software engineering skills. Each project should be production-ready with clean code, tests, documentation, and deployment.</p>
+                </div>
+
+                <h3 style="color: #764ba2; margin: 30px 0 20px 0;">Foundation Projects (Months 0-6)</h3>
+                
+                <div class="project-card">
+                    <h4>1. ML Pipeline Framework</h4>
+                    <p>Build a reusable ML pipeline with data preprocessing, model training, evaluation, and deployment. Include experiment tracking and model versioning.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Python</span>
+                        <span class="tech-badge">Scikit-learn</span>
+                        <span class="tech-badge">MLflow</span>
+                        <span class="tech-badge">Docker</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4>2. Image Classification Service</h4>
+                    <p>Train a CNN from scratch and via transfer learning. Deploy as a REST API with proper error handling, logging, and monitoring.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">PyTorch</span>
+                        <span class="tech-badge">FastAPI</span>
+                        <span class="tech-badge">Redis</span>
+                        <span class="tech-badge">Kubernetes</span>
+                    </div>
+                </div>
+
+                <h3 style="color: #764ba2; margin: 30px 0 20px 0;">Intermediate Projects (Months 6-12)</h3>
+
+                <div class="project-card">
+                    <h4>3. Advanced RAG System</h4>
+                    <p>Build a production RAG system with hybrid search, reranking, query optimization, and citation tracking. Include evaluation metrics and A/B testing.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">LangChain</span>
+                        <span class="tech-badge">Pinecone</span>
+                        <span class="tech-badge">OpenAI</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4>4. Fine-tuned Domain LLM</h4>
+                    <p>Fine-tune an open-source LLM (Llama, Mistral) on domain-specific data using LoRA/QLoRA. Include evaluation suite and deployment.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Hugging Face</span>
+                        <span class="tech-badge">PEFT</span>
+                        <span class="tech-badge">bitsandbytes</span>
+                        <span class="tech-badge">vLLM</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4>5. LLM-Powered Agent System</h4>
+                    <p>Create an autonomous agent that can use tools, maintain memory, and complete multi-step tasks. Include safety guardrails.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">LangGraph</span>
+                        <span class="tech-badge">Function Calling</span>
+                        <span class="tech-badge">Vector DB</span>
+                        <span class="tech-badge">Monitoring</span>
+                    </div>
+                </div>
+
+                <h3 style="color: #764ba2; margin: 30px 0 20px 0;">Advanced Projects (Months 12-18)</h3>
+
+                <div class="project-card">
+                    <h4>6. Train LLM from Scratch</h4>
+                    <p>Pre-train a small language model (100M-1B parameters) from scratch. Document the entire process including data preparation, training, and evaluation.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">PyTorch</span>
+                        <span class="tech-badge">DeepSpeed</span>
+                        <span class="tech-badge">Tokenizers</span>
+                        <span class="tech-badge">Weights & Biases</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4>7. Distributed Training Framework</h4>
+                    <p>Build a framework for distributed training with data/model parallelism, fault tolerance, and automatic checkpointing.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">PyTorch DDP</span>
+                        <span class="tech-badge">FSDP</span>
+                        <span class="tech-badge">Ray</span>
+                        <span class="tech-badge">S3</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4>8. High-Performance Inference Server</h4>
+                    <p>Optimize LLM inference with continuous batching, KV cache optimization, and quantization. Handle 1000+ req/sec.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">vLLM</span>
+                        <span class="tech-badge">TensorRT</span>
+                        <span class="tech-badge">Triton</span>
+                        <span class="tech-badge">Load Balancing</span>
+                    </div>
+                </div>
+
+                <h3 style="color: #764ba2; margin: 30px 0 20px 0;">Expert Projects (Months 18-24+)</h3>
+
+                <div class="project-card">
+                    <h4>9. Novel Architecture Implementation</h4>
+                    <p>Implement a cutting-edge architecture from a recent paper. Reproduce results and contribute improvements back to the community.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Research</span>
+                        <span class="tech-badge">PyTorch</span>
+                        <span class="tech-badge">Benchmarking</span>
+                        <span class="tech-badge">Open Source</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h4>10. End-to-End LLM Platform</h4>
+                    <p>Build a complete platform: data ingestion, training, evaluation, deployment, monitoring, and feedback loops. Production-grade with multi-tenancy.</p>
+                    <div class="tech-stack">
+                        <span class="tech-badge">Microservices</span>
+                        <span class="tech-badge">Kubernetes</span>
+                        <span class="tech-badge">MLOps</span>
+                        <span class="tech-badge">Full Stack</span>
+                    </div>
+                </div>
+
+                <div class="key-principle">
+                    <h4>💡 Project Best Practices</h4>
+                    <p><strong>Code Quality:</strong> Type hints, docstrings, linting (black, ruff), pre-commit hooks</p>
+                    <p><strong>Testing:</strong> Unit tests (>80% coverage), integration tests, performance tests</p>
+                    <p><strong>Documentation:</strong> README, API docs, architecture diagrams, tutorials</p>
+                    <p><strong>Deployment:</strong> Docker, CI/CD, monitoring, logging, error tracking</p>
+                    <p><strong>Open Source:</strong> MIT/Apache license, contribution guidelines, issue templates</p>
+                </div>
+            </div>
+
+            <!-- RESOURCES TAB -->
+            <div id="resources" class="tab-content">
+                <h2 style="color: #667eea; margin-bottom: 30px;">Essential Resources & Learning Materials</h2>
+
+                <div class="resource-grid">
+                    <div class="resource-card">
+                        <h4>📚 Must-Read Books</h4>
+                        <ul>
+                            <li>Deep Learning (Goodfellow, Bengio, Courville)</li>
+                            <li>Speech and Language Processing (Jurafsky & Martin)</li>
+                            <li>Designing Data-Intensive Applications (Kleppmann)</li>
+                            <li>Natural Language Processing with Transformers</li>
+                            <li>Clean Code (Robert Martin)</li>
+                            <li>System Design Interview (Alex Xu)</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎓 Top Courses</h4>
+                        <ul>
+                            <li>Stanford CS224N: NLP with Deep Learning</li>
+                            <li>Stanford CS25: Transformers United</li>
+                            <li>Fast.ai: Practical Deep Learning</li>
+                            <li>DeepLearning.AI: LLM Specialization</li>
+                            <li>Hugging Face NLP Course</li>
+                            <li>Full Stack Deep Learning</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📄 Essential Papers</h4>
+                        <ul>
+                            <li>Attention Is All You Need (Transformers)</li>
+                            <li>BERT, GPT-2, GPT-3</li>
+                            <li>LLaMA, LLaMA 2</li>
+                            <li>InstructGPT (RLHF)</li>
+                            <li>Constitutional AI (Anthropic)</li>
+                            <li>Chinchilla (Scaling Laws)</li>
+                            <li>FlashAttention 1 & 2</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🛠️ Key Tools & Frameworks</h4>
+                        <ul>
+                            <li>PyTorch, Hugging Face Transformers</li>
+                            <li>LangChain, LlamaIndex</li>
+                            <li>vLLM, TGI (Text Generation Inference)</li>
+                            <li>DeepSpeed, Megatron-LM</li>
+                            <li>Weights & Biases, MLflow</li>
+                            <li>Docker, Kubernetes</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🌐 Communities</h4>
+                        <ul>
+                            <li>Hugging Face Discord & Forums</li>
+                            <li>EleutherAI Discord</li>
+                            <li>r/MachineLearning, r/LocalLLaMA</li>
+                            <li>ML Twitter (#NLProc, #LLMs)</li>
+                            <li>Papers with Code</li>
+                            <li>GitHub (follow top researchers)</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>📰 Blogs & Newsletters</h4>
+                        <ul>
+                            <li>The Batch (DeepLearning.AI)</li>
+                            <li>Import AI (Jack Clark)</li>
+                            <li>Sebastian Raschka's Blog</li>
+                            <li>Jay Alammar's Blog</li>
+                            <li>Lil'Log (Lilian Weng)</li>
+                            <li>Hugging Face Blog</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎯 Practice Platforms</h4>
+                        <ul>
+                            <li>Kaggle (competitions & datasets)</li>
+                            <li>LeetCode (algorithms)</li>
+                            <li>HackerRank (Python & ML)</li>
+                            <li>Exercism (code practice)</li>
+                            <li>GitHub (open source contributions)</li>
+                            <li>Hugging Face Spaces (deploy demos)</li>
+                        </ul>
+                    </div>
+
+                    <div class="resource-card">
+                        <h4>🎤 Conferences</h4>
+                        <ul>
+                            <li>NeurIPS, ICML, ICLR</li>
+                            <li>ACL, EMNLP, NAACL</li>
+                            <li>CVPR (for multimodal)</li>
+                            <li>MLSys (systems focus)</li>
+                            <li>Local meetups & workshops</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box" style="margin-top: 40px;">
+                    <h3>🎯 Daily Learning Routine</h3>
+                    <p><strong>Morning (1-2 hours):</strong> Read papers, blog posts, or book chapters. Take notes and implement key concepts.</p>
+                    <p><strong>Afternoon (2-3 hours):</strong> Hands-on coding - work on projects, solve problems, or contribute to open source.</p>
+                    <p><strong>Evening (1 hour):</strong> Watch lectures, tutorials, or conference talks. Engage with community discussions.</p>
+                    <p><strong>Weekend:</strong> Deep work on major projects, experiment with new techniques, write blog posts.</p>
+                </div>
+
+                <div class="key-principle" style="margin-top: 30px;">
+                    <h4>🚀 Accelerated Learning Tips</h4>
+                    <p><strong>1. Learn by Building:</strong> Don't just watch tutorials - implement everything from scratch</p>
+                    <p><strong>2. Read Code:</strong> Study implementations from top researchers and engineers</p>
+                    <p><strong>3. Teach Others:</strong> Write blog posts, create tutorials, mentor juniors</p>
+                    <p><strong>4. Stay Current:</strong> Follow latest papers on arXiv, Twitter, and conferences</p>
+                    <p><strong>5. Network:</strong> Engage with the community, attend meetups, collaborate on projects</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p><strong>Remember:</strong> Becoming a top LLM engineer is a marathon, not a sprint. Focus on consistent progress, deep understanding, and building real-world solutions.</p>
+            <p style="margin-top: 15px; opacity: 0.8;">Stay curious. Keep building. Never stop learning. 🚀</p>
+        </footer>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all tab contents
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.nav-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            // Show selected tab content
+            document.getElementById(tabName).classList.add('active');
+
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Animate progress bars on scroll
+        const observerOptions = {
+            threshold: 0.5,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const progressFills = entry.target.querySelectorAll('.progress-fill');
+                    progressFills.forEach(fill => {
+                        const width = fill.style.width;
+                        fill.style.width = '0%';
+                        setTimeout(() => {
+                            fill.style.width = width;
+                        }, 100);
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.progress-tracker').forEach(tracker => {
+            observer.observe(tracker);
+        });
+    </script>
+</body>
+</html>
